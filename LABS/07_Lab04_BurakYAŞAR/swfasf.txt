@@ -1,0 +1,117 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Iterator;
+import java.util.Random;
+import shapes.*;
+
+public class MyBalloonsPanel extends JPanel
+{
+   static final int DEFAULT_WIDTH = 800;
+   static final int DEFAULT_HEIGHT = 600;
+   static final int MAX_ELAPSED_TIME = 250;
+   static final int UPDATE_PERIOD = 100;
+   static final int INIT_BALLOONS = 25;
+   static final int MIN_BALLOONS = 15;
+   ShapeContainer balloons;
+   Timer timer;
+   JLabel pointsLabel;
+   int points;
+   int elapsedTime;
+   MouseListener pin;
+   
+   public MyBalloonsPanel()
+   {
+      this.pointsLabel = new JLabel();
+      add(this.pointsLabel);
+      
+      setBackground(Color.yellow);
+      setPreferredSize(new Dimension(800, 600));
+      
+      this.pin = new MyBalloonsPanel.Pin(null);
+      
+      this.timer = new Timer(100, new MyBalloonsPanel.GrowListener(null));
+      
+      initGame();
+   }
+   
+   private void initGame()
+   {
+      this.elapsedTime = 0;
+      
+      this.points = 0;
+      this.pointsLabel.setText("Points: " + this.points);
+      
+      this.balloons = new ShapeContainer();
+      addRandomBalloons(25, 800, 600);
+      
+      addMouseListener(this.pin);
+      this.timer.start();
+   }
+   
+   private void addRandomBalloons(int number, int width, int height)
+   {
+      for (int i = 0; i < number; i++)
+      {
+         int x = (int)(Math.random() * width);
+         int y = (int)(Math.random() * height);
+         Balloon b = new Balloon(x, y);
+         this.balloons.add(b);
+      }
+   }
+   
+   public void paintComponent(Graphics g)
+   {
+      super.paintComponent(g);
+      
+      Iterator it = this.balloons.iterator();
+      while (it.hasNext()) {
+         ((Drawable)it.next()).draw(g);
+      }
+   }
+   
+   private class Pin extends MouseAdapter
+   {
+      private Pin() {}
+      
+      public void mousePressed(MouseEvent e)
+      {
+         int burstCount = MyBalloonsPanel.this.balloons.selectAllAt(e.getX(), e.getY());
+         if (burstCount >= 2)
+         {
+            MyBalloonsPanel.this.points += burstCount;
+            MyBalloonsPanel.this.pointsLabel.setText("Points: " + MyBalloonsPanel.this.points);
+         }
+      }
+   }
+   
+   private class GrowListener implements ActionListener
+   {
+      private GrowListener() {}
+      
+      public void actionPerformed(ActionEvent e)
+      {
+         Iterator it = MyBalloonsPanel.this.balloons.iterator();
+         while (it.hasNext()) {
+            ((Balloon)it.next()).grow();
+         }
+         MyBalloonsPanel.this.balloons.removeSelected();
+         if (MyBalloonsPanel.this.balloons.size() < 15) {
+            MyBalloonsPanel.this.addRandomBalloons(1, MyBalloonsPanel.this.getWidth(), MyBalloonsPanel.this.getHeight());
+         }
+         MyBalloonsPanel.this.repaint();
+         
+         MyBalloonsPanel.this.elapsedTime += 1;
+         if (MyBalloonsPanel.this.elapsedTime >= 250)
+         {
+            MyBalloonsPanel.this.timer.stop();
+            MyBalloonsPanel.this.removeMouseListener(MyBalloonsPanel.this.pin);
+            
+            int again = JOptionPane.showConfirmDialog(MyBalloonsPanel.this, "Play again? ", "Game over", 0);
+            if (again == 0) {
+               MyBalloonsPanel.this.initGame();
+            }
+         }
+      }
+   }
+}

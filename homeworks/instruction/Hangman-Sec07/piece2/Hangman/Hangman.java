@@ -1,0 +1,44 @@
+/*
+ * This is the constructor of the Hangman Game.The constructor prints star as many as the 
+ * number of letters of the secret word we get.
+ * 
+ * @version 12.02.17
+ * @author Serkan Öztürk
+ * @author Yusuf Furkan Salcan
+ * @author Ýlker Yapýcý
+ * @author Ýhsan Buðra Erbaþ
+ * @author Mehmet Emre Bozkurt
+ * 
+ */ 
+
+// properties
+
+private StringBuffer knownSoFar ;
+private StringBuffer secretWord ;
+private StringBuffer allLetters ;
+private StringBuffer usedLetters ;
+private int maxAllowedIncorrectTries ;
+private int numberOfIncorrectTries ;
+
+/*
+ * This is the main part of our constructor.
+ * This part prints stars for the game.
+ */ 
+
+public Hangman()
+{
+  
+  allLetters = "abcdefghijklmnopqrstuvwxyz" ;
+  numberOfIncorrectTries = 0 ;
+  maxAllowedIncorrectTries = 6 ;
+  secretWord = chooseSecretWord() ;
+  knownSoFar = "" ;
+  usedLetters = "" ;
+  
+  // This part prints the stars.
+  
+  for ( int i = 0 ; i < secretWord.length() ; i++ )
+  {
+    knownSoFar = knownSoFar + " * " ;  
+  }
+} // end of the constructor.

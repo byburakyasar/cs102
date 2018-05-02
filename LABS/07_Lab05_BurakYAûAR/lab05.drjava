@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20120818-r5686">
+  <project autorefresh="false" build="classes/" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="SOSGUIPanel.java" package="" timestamp="29-May-2017 15:41:10">
+        <select from="224" to="224"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="SOSGameTester.java" package="" timestamp="29-May-2017 15:41:10">
+        <select from="224" to="224"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="SOSCanvas.java" package="" timestamp="29-May-2017 15:41:10">
+        <select from="224" to="224"/>
+        <scroll column="0" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath>
+      <file absolute="false" name="classes/"/>
+    </classpath>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>

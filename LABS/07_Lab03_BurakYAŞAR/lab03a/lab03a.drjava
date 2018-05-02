@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20120818-r5686">
+  <project autorefresh="false" build="../classes/lab03a/" main="C:.Users.Burak YAŞAR.Desktop.07_Lab03_BurakYAŞAR.lab03a.ShapeTester" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="ShapeContainer.java" package="lab03a" timestamp="01-Apr-2017 00:08:07">
+        <select from="2483" to="2483"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="Locatable.java" package="lab03a" timestamp="31-Mar-2017 22:58:28">
+        <select from="2483" to="2483"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="Selectable.java" package="lab03a" timestamp="31-Mar-2017 22:58:28">
+        <select from="2483" to="2483"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="Square.java" package="lab03a" timestamp="31-Mar-2017 22:58:28">
+        <select from="2483" to="2483"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="ShapeTester.java" package="lab03a" timestamp="31-Mar-2017 23:38:29">
+        <select from="2483" to="2483"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="Rectangle.java" package="lab03a" timestamp="31-Mar-2017 23:40:47">
+        <select from="2483" to="2483"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="Shape.java" package="lab03a" timestamp="31-Mar-2017 23:41:05">
+        <select from="2483" to="2483"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="Circle.java" package="lab03a" timestamp="31-Mar-2017 23:44:28">
+        <select from="2483" to="2483"/>
+        <scroll column="0" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>

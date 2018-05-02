@@ -1,0 +1,32 @@
+CS102/07
+
+Burak YAÞAR 21502246
+
+17.02.17
+
+estimate of the time spent on this exercise: 5 hour
+
+the status of code: working
+
+keep a record of what you do --in particular
+--------------------------------------------
+I emerged all pieces and when I run the program at first time of course it did not work
+I debuged the code traced it line by line and I fixed it
+
+what went wrong and how you went about fixing it
+------------------------------------------------
+some codes was not written well(some of them was very useful especially I'd like to thank you also I'd like to thank you those who strive ),
+none of group know about how did the others think while they are coding.
+one of the main problem was some codes did not include necessary things. I mean for example some get methods
+were extremely significant and they did not used. StringBuffer types should have been turned into Strings to
+be able to use the necessary methods of string. That's why String types get methods are important. Some codes
+include it however some did not implement.
+
+Another thing that I want to mention about tryThis method, when the user types a letter which is either not in the 
+alphabet or was used before numberOfIncorrectTries should have been implemented but it was not.
+Whatever, again I fixed it and of course it was long piece of code and maybe there was lack of interest  but most importantly
+there was lack of communication. It is normal to encounter these problems.
+
+what might be done to avoid similar difficulties in the future.
+---------------------------------------------------------------
+In the future, everyone can encourage each other or study more carefully. 

@@ -1,0 +1,46 @@
+/** This method checks if the letter as a parameter, exists 
+     *in the word.
+     * @param letter will be checked in word.
+     * @return the occurence of the letter in the word also
+     * -1,-2 and -3 for kind of errors.
+     * @authors Talha Murathan Göktaþ
+     * Ege Aydýn
+     * Serxhio Gorka
+     */
+ public static int tryThis( char letter )
+ {
+
+// if the letter not in alphabet
+  if( getAllLetters().indexOf(letter) == -1 )
+   return -1;
+
+// if the letter used before
+  else if( getUsedLetters().indexOf(letter) != -1 )
+   return -2;
+  else
+  {
+   int occurrenceNumber = 0;
+
+   for(int i = 0 ; i < secretWord.length() ; i++)
+   {
+    if(Character.toLowerCase(secretWord.charAt(i) ) == letter)
+    {
+     knownSoFar.setCharAt( i, secretWord.charAt(i) );
+     occurrenceNumber++;
+    }
+   }
+
+   // Adds letters to usedLetters
+   usedLetters.append(letter);
+
+   // If the letter is not used in the secret word
+   if(occurrenceNumber == 0)
+    numberOfIncorrectEntries++;
+
+   // If has no more possibilities
+   if( isGameOver() )
+    return -3;
+
+   return occurrenceNumber;
+  }
+ }
